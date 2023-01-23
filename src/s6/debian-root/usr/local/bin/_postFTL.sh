@@ -23,6 +23,13 @@ else
     echo "  Skipping Gravity Database Update."
 fi
 
+# if FORCE_PADD_UPDATE is set to 1 then we will download the latest version of PADD
+if [ "$FORCE_PADD_UPDATE" == "1" ]; then
+    echo "  Forcing PADD Update"
+    curl -sSL https://install.padd.sh -o /usr/local/bin/padd
+    chmod +x /usr/local/bin/padd
+fi
+
 # Run update checker to check for newer container, and display version output
 echo ""
 pihole updatechecker
