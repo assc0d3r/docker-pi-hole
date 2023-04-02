@@ -1,5 +1,5 @@
 ARG PIHOLE_BASE
-FROM: ghcr.io/pi-hole/docker-pi-hole-base:bullseye-slim
+FROM ghcr.io/pi-hole/docker-pi-hole-base:bullseye-slim
 
 ARG PIHOLE_DOCKER_TAG
 RUN echo "${PIHOLE_DOCKER_TAG}" > /pihole.docker.tag
