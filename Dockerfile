@@ -5,7 +5,7 @@ ARG PIHOLE_DOCKER_TAG
 RUN echo "${PIHOLE_DOCKER_TAG}" > /pihole.docker.tag
 
 ENTRYPOINT [ "/s6-init" ]
-
+MKDIR /s6-init
 COPY s6/debian-root /
 COPY s6/service /usr/local/bin/service
 
